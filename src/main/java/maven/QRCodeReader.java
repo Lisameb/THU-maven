@@ -29,10 +29,6 @@ public class QRCodeReader {
 
     public static void main(String[] args) {
         try {
-        	 String resourceName = "qr.png";
-             URL resource = ClassLoader.getSystemResource(resourceName);
-             String configPath = URLDecoder.decode(resource.getFile(), "UTF-8");
-        
             File file = new File("C:\\Users\\lisam\\Documents\\Studium\\Kraken\\THU-maven\\src\\test\\resources\\qr.png");
             String decodedText = decodeQRCode(file);
             if(decodedText == null) {
@@ -40,7 +36,7 @@ public class QRCodeReader {
             } else {
                 System.out.println("Decoded text = " + decodedText);
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Could not decode QR Code, IOException :: " + e.getMessage());
         }
     }

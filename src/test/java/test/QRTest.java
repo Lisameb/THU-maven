@@ -21,7 +21,7 @@ public class QRTest {
         String absolutePath = file.getAbsolutePath();
         System.out.println(absolutePath);
         assertTrue(absolutePath.endsWith(".png"));
-        //QRCodeReader.decodeQRCode(file);
+    
         QRCodeReader.decodeQRCode(file);
     }
 

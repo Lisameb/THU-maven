@@ -19,7 +19,7 @@ public class QRCodeReader {
 
         try {
             Result result = new MultiFormatReader().decode(bitmap);
-            System.out.println(result.getText());
+           // System.out.println(result.getText());
             return result.getText();
         } catch (NotFoundException e) {
             System.out.println("There is no QR code in the image");
@@ -32,8 +32,8 @@ public class QRCodeReader {
         	 String resourceName = "qr.png";
              URL resource = ClassLoader.getSystemResource(resourceName);
              String configPath = URLDecoder.decode(resource.getFile(), "UTF-8");
-        	
-            File file = new File("qr.png");
+        
+            File file = new File("C:\\Users\\lisam\\Documents\\Studium\\Kraken\\THU-maven\\src\\test\\resources\\qr.png");
             String decodedText = decodeQRCode(file);
             if(decodedText == null) {
                 System.out.println("No QR Code found in the image");
